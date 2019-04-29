@@ -35,4 +35,9 @@ public class SolaceConfig {
 
         return session;
     }
+
+    @Bean
+    public Topic partsTopic() {
+        return JCSMPFactory.onlyInstance().createTopic("parts/*");
+    }
 }
